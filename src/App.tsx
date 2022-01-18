@@ -58,7 +58,10 @@ const ChatResources = () => {
   }
 
   return (
-    <ChatKittyProvider client={client} channels={channels}>
+    <ChatKittyProvider
+      client={client}
+      channels={[...channels.filter((c) => c.name === "Demo Channel")]}
+    >
       <Chat />
     </ChatKittyProvider>
   );
